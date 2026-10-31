@@ -10,6 +10,7 @@ import {
   FileText,
   MessageSquare,
   Megaphone,
+  CalendarClock,
 } from 'lucide-react';
 import type { NavigationItem } from '../types/navigation';
 import type { UserRole } from '../types/auth';
@@ -69,6 +70,12 @@ export const roleNavigationConfig: Record<UserRole, NavigationItem[]> = {
       ],
     },
     {
+      id: 'verificator-availability',
+      label: 'Quản lý lịch trống',
+      path: '/verificator/availability',
+      icon: CalendarClock,
+    },
+    {
       id: 'verificator-projects',
       label: 'Dự án',
       path: '/verificator/projects',
@@ -113,7 +120,7 @@ export const roleNavigationConfig: Record<UserRole, NavigationItem[]> = {
 // Route mặc định khi đăng nhập theo vai trò
 export const roleDefaultRoutes: Record<UserRole, string> = {
   admin: '/admin/revenue',
-  verificator: '/verificator/students',
+  verificator: '/verificator/availability',
   moderator: '/moderator/projects',
 };
 
@@ -142,4 +149,3 @@ export const getRedirectPathForRole = (
   }
   return roleDefaultRoutes[role] || `/${role}`;
 };
-
