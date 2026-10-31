@@ -21,6 +21,7 @@ import { AdminProjectsPage } from './pages/admin/ProjectsPage';
 import { StudentsPage } from './pages/verificator/StudentsPage';
 import { CompaniesPage } from './pages/verificator/CompaniesPage';
 import { VerificatorProjectsPage } from './pages/verificator/ProjectsPage';
+import { VerificatorAvailabilityPage } from './pages/verificator/VerificatorAvailabilityPage';
 
 // Moderator Pages
 import { ModeratorProjectsPage } from './pages/moderator/ProjectsPage';
@@ -103,7 +104,8 @@ export const App: React.FC = () => {
               </ProtectedRoute>
             }
           >
-            <Route index element={<Navigate to="/verificator/students" replace />} />
+            <Route index element={<Navigate to="/verificator/availability" replace />} />
+            <Route path="availability" element={<VerificatorAvailabilityPage />} />
             <Route path="students" element={<StudentsPage />} />
             <Route path="companies" element={<CompaniesPage />} />
             <Route path="users" element={<UsersPage />} />
